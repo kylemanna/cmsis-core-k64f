@@ -97,7 +97,10 @@ extern "C" {
 #include <stdint.h>
 
 
-#define DISABLE_WDOG                   1
+// K22F: Disabling the watchdog in SystemInit() after the startup asm
+// disables the watchdog causes a reset?  Why?
+// Disable the disable.
+#define DISABLE_WDOG                   0
 
 #ifndef CLOCK_SETUP
   #define CLOCK_SETUP                  4
